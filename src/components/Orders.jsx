@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Orders = () => {
   const [json, setJson] = useState([]);
-  const [loading, setLoading] = useState(true); // Set loading to true initially
+  const [loading, setLoading] = useState(true);
   const [deleting , setDeleting] = useState(false);
   const [loadingOrderId, setLoadingOrderId] = useState(null);
 
@@ -31,7 +31,7 @@ const Orders = () => {
 
         localStorage.setItem('orders', JSON.stringify(updatedJson));
         setJson(updatedJson);
-        setLoading(false); // Set loading to false when data is fetched
+        setLoading(false); 
       } catch (error) {
         console.log(error);
       }
@@ -76,7 +76,7 @@ const Orders = () => {
       {data && <User user={data} />}
       <div className='bg-white shadow-lg rounded-lg p-4'>
         <h1 className='text-2xl font-bold text-indigo-600'>Order List</h1>
-        {loading ? ( // Display loading icon while loading is true
+        {loading ? (
           <div>Loading...</div>
         ) : (
           json.map((order, index) => (

@@ -2,7 +2,7 @@ import  { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const EditOrder = () => {
-  const { id } = useParams(); // Get the order ID from the URL parameters
+  const { id } = useParams(); 
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     customer_name: '',
@@ -57,7 +57,7 @@ const EditOrder = () => {
       setOrders(updatedOrders);
       localStorage.setItem('orders', JSON.stringify(updatedOrders));
       setLoading(false)
-      navigate('/orders'); // Redirect to the "Orders" page after editing
+      navigate('/orders'); 
     }, 1000);
    
   };

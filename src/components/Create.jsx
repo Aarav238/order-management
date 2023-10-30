@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
-
+import { useNavigate } from "react-router-dom"; 
 const Create = () => {
   const [formData, setFormData] = useState({
     customer_name: "",
@@ -13,7 +12,7 @@ const Create = () => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const navigate = useNavigate(); // Initialize the navigate function
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const savedOrders = JSON.parse(localStorage.getItem("orders"));
@@ -52,7 +51,7 @@ const Create = () => {
       quantity: 0,
     });
     setLoading(false);
-    // Redirect to the "Orders" page after submitting
+  
     navigate("/orders");
     }, 1000);
     
